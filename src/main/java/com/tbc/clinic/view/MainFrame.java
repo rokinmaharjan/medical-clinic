@@ -34,14 +34,13 @@ public class MainFrame extends JFrame {
                 frame.setVisible(true);
 
                 loginPanel = new LoginPanel();
-                homePanel = new HomePanel();
                 frame.add(loginPanel);
 
                 loginPanel.loginEventListener(new EventsListener() {
                     @Override
                     public void eventOccured(Event event) {
                         frame.getContentPane().removeAll();
-                        frame.add(homePanel);
+                        frame.add(new HomePanel());
                         frame.repaint();
                         frame.revalidate();
                     }
@@ -59,7 +58,16 @@ public class MainFrame extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setLayout(new java.awt.CardLayout());
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
