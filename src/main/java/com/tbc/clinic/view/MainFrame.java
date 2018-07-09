@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
 
     private LoginPanel loginPanel;
     private HomePanel homePanel;
+    private DoctorPanel doctorPanel;
 
     /**
      * Creates new form MainFrame
@@ -29,7 +30,7 @@ public class MainFrame extends JFrame {
             @Override
             public void run() {
                 JFrame frame = new JFrame("Northampton Medical Clinic");
-                frame.setSize(800, 600);
+                frame.setSize(1000, 600);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
 
@@ -40,7 +41,7 @@ public class MainFrame extends JFrame {
                     @Override
                     public void eventOccured(Event event) {
                         frame.getContentPane().removeAll();
-                        frame.add(new HomePanel());
+                        frame.add(new DoctorPanel());
                         frame.repaint();
                         frame.revalidate();
                     }
@@ -58,16 +59,7 @@ public class MainFrame extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        getContentPane().setLayout(new java.awt.GridBagLayout());
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -8,7 +8,13 @@ package com.tbc.clinic.controller;
 import com.tbc.clinic.model.Staff;
 import com.tbc.clinic.utility.HibernateUtility;
 import com.tbc.clinic.view.MainFrame;
+import java.awt.Dimension;
 import java.util.Date;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -20,8 +26,8 @@ public class Main {
 
     public static void main(String[] args) {
         MainFrame mainframe = new MainFrame();
-
 //        addDefaultStaff();
+
     }
 
     public static void addDefaultStaff() {
