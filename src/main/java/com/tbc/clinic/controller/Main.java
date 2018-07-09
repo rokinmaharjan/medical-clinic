@@ -15,8 +15,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -26,13 +28,22 @@ public class Main {
 
     public static void main(String[] args) {
         MainFrame mainframe = new MainFrame();
-//        addDefaultStaff();
+        
+        Session session = HibernateUtility.getSession();
+        Criteria criteria = session.createCriteria(Staff.class);
+        Staff staff = (Staff) criteria.add(Restrictions.eq("username", "admin"))
+                .uniqueResult();
+        
+        if (staff == null) {
+            addDefaultStaff();
+        }
+        
 
     }
 
     public static void addDefaultStaff() {
         Staff staff = Staff.builder()
-                .name("Hari Bahadu")
+                .name("Medical Admin")
                 .username("admin")
                 .password("admin")
                 .gender("Male")
